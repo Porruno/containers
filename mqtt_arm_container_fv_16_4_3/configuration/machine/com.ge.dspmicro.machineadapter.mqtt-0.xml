@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mqttMachineAdapterConfig>
+    <name>MQTT nodes</name>
+    <description>MQTT nodes and subscriptions</description>
+ 
+    <dataNodeConfigs>
+              <dataNode name="Node-1" topic="TestTopic1" qos="0" description="TestTopic 1 with Qos 0" />
+              <dataNode name="Node-2" topic="TestTopic2" qos="1" description="TestTopic 2 with Qos 1" />
+              <dataNode name="Node-3" topic="TestTopic3" qos="2" description="TestTopic 3 with Qos 2" />
+              
+              <!-- the attribute serializedData defaults to false -->
+              <!-- when serializedData is true, the adapter interprets the payload as serialized PData values in JSON format -->
+              <!-- 
+              <dataNode name="Node-4" topic="TestTopic4" qos="2" serializedData="true" description="TestTopic 4 with Qos 2" />
+              -->
+    </dataNodeConfigs>
+ 
+    <dataSubscriptionConfigs>
+        <dataSubscriptionConfig name="Analytics Subscription">
+            <nodeName>Node-1</nodeName>
+            <nodeName>Node-2</nodeName>
+        </dataSubscriptionConfig>
+    </dataSubscriptionConfigs>
+ 
+ </mqttMachineAdapterConfig>
